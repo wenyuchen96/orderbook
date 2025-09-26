@@ -7,6 +7,7 @@
 #include <stdexcept>
 #include <format>
 #include <memory>
+#include <list>
 
 class Order
 {
@@ -70,3 +71,7 @@ public:
         orderType_ = OrderType::GoodTillCancel;
     };
 };
+
+// smart pointers at the Order object
+using OrderPtr = std::shared_ptr<Order>;
+using OrderPtrs = std::list<OrderPtr>;

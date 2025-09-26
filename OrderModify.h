@@ -23,4 +23,9 @@ public:
     Side getSide() const { return side_; }
     Price getNewPrice() const { return newPrice_; }
     Quantity getNewQty() const { return newQty_; }
+
+    OrderPtr ToOrderPointer(OrderType type) const
+    {
+        return std::make_shared<Order>(type, getOrderId(), getSide(), getNewPrice(), getNewQty());
+    }
 };

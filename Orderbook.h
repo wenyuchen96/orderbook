@@ -11,10 +11,6 @@
 #include <list>
 #include <memory>
 
-// smart pointers at the Order object
-using OrderPtr = std::shared_ptr<Order>;
-using OrderPtrs = std::list<OrderPtr>;
-
 class Orderbook
 {
 private:
@@ -56,6 +52,7 @@ public:
     // public methods to add order, cancel order, and match order
     Trades AddOrder(OrderPtr order);
     void CancelOrder(OrderId orderId);
-    Trades ModifyOrder(OrderModify mod); // cancel + add; allow user to change price and quantity
+    Trades MatchOrders();
+    Trades ModifyOrders(OrderModify mod); // cancel + add; allow user to change price and quantity
     OrderbookLevelInfos GetOrderInfos() const;
 };

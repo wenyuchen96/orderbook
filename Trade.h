@@ -5,7 +5,8 @@
 
 struct Trade
 {
-    OrderId buyId, sellId;
+    OrderId buyId;
+    OrderId sellId;
     Price price;
     Quantity qty;
 };
